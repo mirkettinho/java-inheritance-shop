@@ -3,18 +3,17 @@ package org.lessons.java.shop;
 public class Prodotto {
 	
 	private String code;
-	public String name;
-	public String brand;
-	public int price;
-	public int vat;
+	private String name;
+	private String brand;
+	private float price;
+	private final static int VAT = 20; /// English VAT
 	
-	public Prodotto(String code, String name, String brand, int price, int vat) {
+	public Prodotto(String name, String brand, float price) {
 		
-		setCode(code);
+		setCode();
 		setName(name);
 		setBrand(brand);
 		setPrice(price);
-		setVat(vat);
 		
 	}
 	
@@ -24,9 +23,9 @@ public class Prodotto {
 		return code;
 	}
 	
-	public void setCode(String code) {
+	public void setCode() {
 		
-		this.code = code;
+		this.code = "F2A345GH1500XRT2 ";
 	}
 	
 	///NAME
@@ -52,12 +51,12 @@ public class Prodotto {
 	}
 	
 	///PRICE
-	public int getPrice() {
+	public double getPrice() {
 		
 		return price;
 	}
 	
-	public void setPrice(int price) {
+	public void setPrice(float price) {
 		
 		this.price = price;
 	}
@@ -65,13 +64,19 @@ public class Prodotto {
 	///VAT
 	public int getVat() {
 		
-		return vat;
+		return VAT;
 	}
 	
-	public void setVat(int vat) {
+	@Override
+	public String toString() {
 		
-		this.vat = vat;
+		return "Product code: " + getCode() + "| " +
+				"Name : " + getName() + " | " +
+				"Brand : " + getBrand() + " | " +
+				"Price : " + getPrice() + " | " +
+				"VAT : " + getVat() + "%" + " | "; 
 	}
+	
 	
 	
 	
