@@ -15,5 +15,9 @@ public class Main {
 		///TELEVISION
 		Televisore test3 = new Televisore("The Frame", "Samsung", 1099.00f, 60, true);
 		System.out.println(test3);
+		
+		///HEADPHONES
+		Cuffie test4 = new Cuffie("G733", "Logitech", 99.00f, "Black", true);
+		System.out.println(test4);
 	}
 }
